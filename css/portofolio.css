@@ -1,0 +1,6 @@
+/* Filter Button */
+.card-box .row .navbar-nav .filter-btn {
+	background-color: #c4c4c4 !important;
+	border-radius: .5rem !important;
+	padding: 0 2rem !important;
+}
