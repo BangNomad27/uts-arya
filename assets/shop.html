@@ -26,8 +26,10 @@
   <nav class="navbar navbar-expand-lg bg-white navbar-light fixed-top">
     <div class="container flex-row-reverse fs-5">
       <a class="navbar-brand fs-4" href="shop.html">Logo</a>
-      <div class="cart fs-4">
-        <i class='bx bx-cart'></i>
+      <div class="cart-shop fs-3">
+        <a href="shop.html" class="cart" data-bs-toggle="modal" data-bs-target="#modal-click">
+          <i class='bx bx-cart'></i>
+        </a>
       </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -96,6 +98,196 @@
   </div>
   <!-- Image Slider End -->
 
+  <!-- Cart Start -->
+  <section id="cart-box" class="cart-box">
+    <div class="container">
+      <div class="row mt-5">
+        <div class="col-md-3">
+          <div class="card">
+            <img src="../img/jacket1.jpg" class="card-img-top" alt="Shopping Cart">
+            <div class="card-body">
+              <h5 class="card-title">Jaket Switer</h5>
+              <p class="card-text price">Harga: $55,00</p>
+              <a href="shop.html" class="btn btn-primary add-cart cart1">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card">
+            <img src="../img/tshirt1.jpg" class="card-img-top" alt="Shopping Cart">
+            <div class="card-body">
+              <h5 class="card-title">Baju ALE Hitam</h5>
+              <p class="card-text price">Harga: $15,00</p>
+              <a href="shop.html" class="btn btn-primary add-cart cart2">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card">
+            <img src="../img/sepatu1.jpg" class="card-img-top" alt="Shopping Cart">
+            <div class="card-body">
+              <h5 class="card-title">Sepatu Adados</h5>
+              <p class="card-text price">Harga: $25,00</p>
+              <a href="shop.html" class="btn btn-primary add-cart cart3">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card">
+            <img src="../img/jam1.jpg" class="card-img-top" alt="Shopping Cart">
+            <div class="card-body">
+              <h5 class="card-title">Jam Tangan Gene</h5>
+              <p class="card-text price">Harga: $20,00</p>
+              <a href="shop.html" class="btn btn-primary add-cart cart4">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-sm-3">
+          <div class="card">
+            <img src="../img/sepatu2.jpg" class="card-img-top" alt="Shopping Cart">
+            <div class="card-body">
+              <h5 class="card-title">Sepatu Naik-in</h5>
+              <p class="card-text price">Harga: $30,00</p>
+              <a href="shop.html" class="btn btn-primary add-cart cart5">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="card">
+            <img src="../img/jam2.jpg" class="card-img-top" alt="Shopping Cart">
+            <div class="card-body">
+              <h5 class="card-title">Jam Tangan Ribet</h5>
+              <p class="card-text price">Harga: $75,00</p>
+              <a href="shop.html" class="btn btn-primary add-cart cart6">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="card">
+            <img src="../img/jacket2.jpg" class="card-img-top" alt="Shopping Cart">
+            <div class="card-body">
+              <h5 class="card-title">Jaket Hacker</h5>
+              <p class="card-text price">Harga: $50,00</p>
+              <a href="shop.html" class="btn btn-primary add-cart cart7">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="card">
+            <img src="../img/tshirt4.jpg" class="card-img-top" alt="Shopping Cart">
+            <div class="card-body">
+              <h5 class="card-title">Baju Chrome Hitam</h5>
+              <p class="card-text price">Harga: $17,00</p>
+              <a href="shop.html" class="btn btn-primary add-cart cart8">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-sm-3">
+          <div class="card">
+            <img src="../img/tshirt3.jpg" class="card-img-top" alt="Shopping Cart">
+            <div class="card-body">
+              <h5 class="card-title">Baju Alayenjer</h5>
+              <p class="card-text price">Harga: $27,00</p>
+              <a href="shop.html" class="btn btn-primary add-cart cart9">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="card">
+            <img src="../img/sepatu3.jpg" class="card-img-top" alt="Shopping Cart">
+            <div class="card-body">
+              <h5 class="card-title">Sepatu Putih</h5>
+              <p class="card-text price">Harga: $45,00</p>
+              <a href="shop.html" class="btn btn-primary add-cart cart10">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="card">
+            <img src="../img/jam3.jpg" class="card-img-top" alt="Shopping Cart">
+            <div class="card-body">
+              <h5 class="card-title">Jam Tangan Alex</h5>
+              <p class="card-text price">Harga: $60,00</p>
+              <a href="shop.html" class="btn btn-primary add-cart cart11">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="card">
+            <img src="../img/jacket3.jpg" class="card-img-top" alt="Shopping Cart">
+            <div class="card-body">
+              <h5 class="card-title">Jaket Maling</h5>
+              <p class="card-text price">Harga: $85,00</p>
+              <a href="shop.html" class="btn btn-primary add-cart cart12">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Cart End -->
+
+  <!-- Modal Start -->
+  <div class="modal fade" id="modal-click" tabindex="-1" aria-labelledby="modal-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title mx-auto text-uppercase fw-bold" id="modal-label">Cart</h5>
+          <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+        </div>
+        <div class="modal-body">
+          <div class="produk-header">
+            <!-- <h5 class="item">Item</h5> -->
+            <!-- <h5 class="price">Price</h5> -->
+            <h5 class="quantity fs-5">Quantity</h5>
+            <!-- <h5 class="total">Total</h5> -->
+          </div>
+          <div class="produk-main">
+            <!-- in Javascript -->
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn d-grid gap-2 col-6 mx-auto text-uppercase fw-bold">
+            Pay
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal End -->
+
+  <!-- Our Client Start -->
+  <section id="client-box" class="client-box">
+    <div class="container">
+      <div class="row mt-5">
+        <div class="col mt-3 text-center">
+          <h2 class="text-color fw-bold">Support Payment</h2>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-md mb-3 d-flex justify-content-between">
+          <img src="../img/cewe2.png" alt="Our Client" class="rounded-circle img-client">
+          <img src="../img/cewe1.png" alt="Our Client" class="rounded-circle img-client">
+          <img src="../img/cewe5.png" alt="Our Client" class="rounded-circle img-client">
+          <img src="../img/cewe4.png" alt="Our Client" class="rounded-circle img-client">
+          <img src="../img/cewe1.png" alt="Our Client" class="rounded-circle img-client">
+        </div>
+        <div class="col-md mt-3 d-flex justify-content-between">
+          <img src="../img/cewe1.png" alt="Our Client" class="rounded-circle img-client">
+          <img src="../img/cewe6.png" alt="Our Client" class="rounded-circle img-client">
+          <img src="../img/cewe2.png" alt="Our Client" class="rounded-circle img-client">
+          <img src="../img/cewe1.png" alt="Our Client" class="rounded-circle img-client">
+          <img src="../img/cewe5.png" alt="Our Client" class="rounded-circle img-client">
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Our Client End -->
+
   <!-- Gelombang Start -->
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ff6712" fill-opacity="0.3" d="M0,192L26.7,202.7C53.3,213,107,235,160,218.7C213.3,203,267,149,320,133.3C373.3,117,427,139,480,154.7C533.3,171,587,181,640,186.7C693.3,192,747,192,800,160C853.3,128,907,64,960,74.7C1013.3,85,1067,171,1120,218.7C1173.3,267,1227,277,1280,256C1333.3,235,1387,181,1413,154.7L1440,128L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"></path></svg>
   <!-- Gelombang End -->
@@ -160,6 +352,9 @@
 
   <!-- JQuery v3.6.0 (online) -->
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+  <!-- Sweet Alert (online) -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.4/dist/sweetalert2.all.min.js"></script>
 
   <!-- Custom Javascript -->
   <script src="../js/script.js"></script>

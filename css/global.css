@@ -14,9 +14,86 @@
 }
 
 /* Cart */
-.cart {
+.cart-shop .cart {
 	margin-right: 1rem !important;
+	color: #333;
 	cursor: pointer !important;
+}
+.cart-shop .cart:hover {
+	color: #ff6712 !important;
+}
+
+/* Modal */
+.modal .modal-dialog .modal-header .modal-title {
+	color: #ff6712 !important;
+	letter-spacing: 1px;
+}
+.modal .modal-dialog .modal-footer .btn {
+	background: #ff6712 !important;
+	color: #333 !important;
+	letter-spacing: 1px;
+	border-color: #ff6712;
+}
+.modal .modal-dialog .modal-footer .btn:hover {
+	background: rgba(255,103,18,.9)!important;
+}
+
+/* Modal Produk */
+.produk-header {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+.produk-main .produk-box {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.produk-main .produk-box:not(:last-child) {
+	border-bottom: 1px solid #c4c4c4;
+}
+.produk-main .produk-box .box1 {
+	display: flex;
+	align-items: center;
+	margin: 20px 0;
+}
+.produk-main .produk-box .box1 .produk-text {
+	display: flex;
+	flex-flow: column;
+}
+.produk-main .produk-box .box1 img {
+	width: 90px;
+	height: 70;
+	margin: 0 7px;
+	object-fit: cover;
+}
+.produk-main .produk-box .bx {
+	color: #333;
+	font-size: 22px;
+	cursor: pointer;
+}
+.produk-main .produk-box .box1 .bx:hover {
+	color: #f00;
+}
+.produk-main .produk-box .box2 .bx:hover {
+	color: #00f;
+}
+.produk-main .produk-box .box2 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.produk-main .produk-box .box2 span {
+	margin: 0 7px;
+	font-size: 22px;
+}
+.produk-main .produk-total {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+.produk-main .produk-total .total-title {
+	margin-right: 7px;
 }
 
 /* Navbar Nav */

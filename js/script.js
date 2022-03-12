@@ -76,28 +76,273 @@ function btnMoreService() {
 btnMoreService();
 
 
-// Form:
+// Form Request:
 const btnSubmit = document.querySelector('.btn-submit');
 
 function formInput() {
 	// Local Variabel:
 	const produk = $('#produk').val();
+	const noneProduk = $('#none-produk').val();
 	const amount = $('#amount').val();
 	const sheet = $('#sheet').val();
 	const size = $('#size').val();
 	const paper = $('#paper').val();
 	const comment = $('#comment').val();
 
-	Swal.fire('Produk: '+ produk +'\nJumlah: '+ amount +'\nLembar: '+ sheet +'\nUkuran: '+ size +'\nKertas: '+ paper +'\nKeterangan: '+ comment);
+	if(produk == noneProduk) {
+		Swal.fire({
+			icon: 'error',
+			title: 'Harap pilih produknya'
+		});
+	}
+	else if(amount == '') {
+		Swal.fire({
+			icon: 'error',
+			title: 'Harap masukkan jumlahnya'
+		});
+	}
+	else if(sheet == '') {
+		Swal.fire({
+			icon: 'error',
+			title: 'Harap pilih lembarnya'
+		});
+	}
+	else if(size == '') {
+		Swal.fire({
+			icon: 'error',
+			title: 'Harap pilih ukurannya'
+		});
+	}
+	else if(paper == '') {
+		Swal.fire({
+			icon: 'error',
+			title: 'Harap pilih kertasnya'
+		});
+	}
+	else if(comment == '') {
+		Swal.fire({
+			icon: 'error',
+			title: 'Masukkan keterengan tambahan'
+		});
+	}
+	else {
+		Swal.fire('Produk: '+ produk +'\nJumlah: '+ amount +'\nLembar: '+ sheet +'\nUkuran: '+ size +'\nKertas: '+ paper +'\nKeterangan: '+ comment);
+	}
 }
 
-btnSubmit.addEventListener('click', function() {
-	btnSubmit.onclick = formInput();
-}); // akan error jika diluar file: service.html (jangan khawatir)
+// onclick-nya ada di button: request.html
 
 
+// Cart & Modal:
+let carts = document.querySelectorAll('.add-cart');
 
+let products = [ // JSON
+	{
+		title: 'Jaket Switer',
+		tag: 'jacket1',
+		price: 55,
+		inCart: 0
+	},
+	{
+		title: 'Baju ALE Hitam',
+		tag: 'tshirt1',
+		price: 15,
+		inCart: 0
+	},
+	{
+		title: 'Sepatu Adados',
+		tag: 'sepatu1',
+		price: 25,
+		inCart: 0
+	},
+	{
+		title: 'Jam Tangan Gene',
+		tag: 'jam1',
+		price: 20,
+		inCart: 0
+	},
+	{
+		title: 'Sepatu Naik-in',
+		tag: 'sepatu2',
+		price: 30,
+		inCart: 0
+	},
+	{
+		title: 'Jam Tangan Ribet',
+		tag: 'jam2',
+		price: 75,
+		inCart: 0
+	},
+	{
+		title: 'Jaket Hacker',
+		tag: 'jacket2',
+		price: 50,
+		inCart: 0
+	},
+	{
+		title: 'Baju Chrome Hitam',
+		tag: 'tshirt4',
+		price: 17,
+		inCart: 0
+	},
+	{
+		title: 'Baju Aleyenjer',
+		tag: 'tshirt3',
+		price: 27,
+		inCart: 0
+	},
+	{
+		title: 'Sepatu Putih',
+		tag: 'sepatu3',
+		price: 45,
+		inCart: 0
+	},
+	{
+		title: 'Jam Tangan Alex',
+		tag: 'jam3',
+		price: 60,
+		inCart: 0
+	},
+	{
+		title: 'Jaket Maling',
+		tag: 'jacket3',
+		price: 85,
+		inCart: 0
+	}
+];
 
+// for(let i = 0; i < carts.length; i++) {
+// 	carts[i].addEventListener('click', () => {
+// 		cartNumbers(products[i]);
+// 	});
+// }
+
+carts.forEach((cart, i) => {
+	cart.addEventListener('click', () => {
+		// Swal.fire({
+		// 	icon: 'success',
+		// 	title: 'Add to Cart'
+		// });
+
+		cartNumbers(products[i]);
+		totalCart(products[i]);
+	});
+});
+
+function onLoadCartNumbers() {
+	// let productNumbers = localStorage.getItem('cartNumbers');
+
+	// if(productNumbers) {
+	// 	// document.querySelector('.cart').textContent = productNumbers;
+	// 	displayCart();
+	// }
+	const btnCart = document.querySelector('.cart');
+
+	btnCart.addEventListener('click', () => {
+		displayCart();
+	});
+}
+
+function cartNumbers(product) {
+	let productNumbers = localStorage.getItem('cartNumbers');
+
+	// console.log(productNumbers);
+	// console.log(typeof productNumbers); // string
+
+	productNumbers = parseInt(productNumbers);
+	// console.log(typeof productNumbers); // number
+
+	if(productNumbers) {
+		localStorage.setItem('cartNumbers', productNumbers + 1);
+		// document.querySelector('.cart').textContent = productNumbers + 1;
+	}
+	else {
+		localStorage.setItem('cartNumbers', 1);
+		// document.querySelector('.cart').textContent = 1;
+	}
+	setItems(product);
+}
+
+function setItems(product) {
+	let cartItems = localStorage.getItem('productsIntCart');
+	cartItems = JSON.parse(cartItems);
+
+	if(cartItems != null) {
+		if(cartItems[product.tag] == undefined) {
+			cartItems = {
+				...cartItems,
+				[product.tag]: product
+			}
+		}
+		cartItems[product.tag].inCart += 1;
+	}
+	else {
+		product.inCart = 1;
+		cartItems = {
+			[product.tag]: product
+		}
+	}
+	// console.log('My cartItems are ', cartItems);
+	// console.log('Produk sudah masuk', product); // cek JSON (database)
+
+	localStorage.setItem('productsIntCart', JSON.stringify(cartItems)); // masukkan data ke localStortage
+}
+
+function totalCart(product) {
+	// console.log('ini total bayar', product.price); // cek function
+	let totalCost = localStorage.getItem('totalCart');
+	
+	// console.log('Total bayar: ', totalCost);
+	// console.log(typeof totalCost);
+
+	if(totalCost != null) {
+		totalCost = parseInt(totalCost);
+		localStorage.setItem('totalCart', totalCost + product.price);
+	}
+	else {
+		localStorage.setItem('totalCart', product.price);
+	}
+}
+
+function displayCart() {
+	let cartItems = localStorage.getItem('productsIntCart');
+	cartItems = JSON.parse(cartItems);
+	let productBody = document.querySelector('.produk-main');
+	let totalCost = localStorage.getItem('totalCart');
+
+	// console.log(cartItems); // cek object
+	if(cartItems && productBody) {
+		Object.values(cartItems).map(item => {
+			productBody.innerHTML += `
+				<div class="produk-box">
+					<div class="box1">
+						<i class='close bx bxs-trash-alt'></i>
+						<img src="../img/${item.tag}.jpg" alt="Image">
+						<div class="produk-text">
+							<h5 class="title">${item.title}</h5>
+							<h5 class="price">$${item.inCart * item.price},00-</h5>
+						</div>
+					</div>
+					<div class="box2">
+						<i class='bx bx-minus-circle'></i>
+						<span>${item.inCart}</span>
+						<i class='bx bx-plus-circle'></i>
+					</div>
+				</div>
+			`;
+		});
+
+		productBody.innerHTML += `
+			<div class="produk-total">
+				<h5 class="total-title">Total =</h5>
+				<h5 class="total-price">$${totalCost},00</h5>
+			</div>
+		`;
+	}
+}
+
+onLoadCartNumbers();
+// displayCart();
 
 
 // Area Function Service:

@@ -102,46 +102,64 @@
       <div class="row mb-5 d-flex justify-content-center">
         <label for="produk" class="col-sm-2 col-form-label fs-5">Pilih Produk</label>
         <div class="col-md-5">
-          <select id="produk" class="form-select" aria-label="Default select example">
-            <option value="-" selected>---</option>
+          <select id="produk" class="form-select" aria-label="Default select example" required>
+            <option id="none-produk" value="-" selected>---</option>
             <option value="Computer">Computer</option>
             <option value="Girl">Girl</option>
             <option value="Place">Place</option>
           </select>
+          <div class="invalid-tooltip">
+            Please select a product.
+          </div>
         </div>
       </div>
       <div class="row mb-5 d-flex justify-content-center">
         <label for="amount" class="col-sm-2 col-form-label fs-5">Jumlah</label>
-        <div class="col-md-5" style="outline: none;">
-          <input type="text" class="form-control" id="amount">
+        <div class="col-md-5">
+          <input type="text" class="form-control" id="amount" required>
+        </div>
+        <div class="invalid-tooltip">
+          Please enter the amount.
         </div>
       </div>
       <div class="row mb-5 d-flex justify-content-center">
         <label for="sheet" class="col-sm-2 col-form-label fs-5">Lembar</label>
         <div class="col-md-5">
-          <input type="text" class="form-control" id="sheet">
+          <input type="text" class="form-control" id="sheet" required>
+        </div>
+        <div class="invalid-tooltip">
+          Please enter the sheet.
         </div>
       </div>
       <div class="row mb-5 d-flex justify-content-center">
         <label for="size" class="col-sm-2 col-form-label fs-5">Ukuran</label>
         <div class="col-md-5">
-          <input type="text" class="form-control" id="size">
+          <input type="text" class="form-control" id="size" required>
+          <div class="invalid-tooltip">
+            Please enter the size.
+          </div>
         </div>
       </div>
       <div class="row mb-5 d-flex justify-content-center">
         <label for="paper" class="col-sm-2 col-form-label fs-5">Kertas</label>
         <div class="col-md-5">
-          <input type="text" class="form-control" id="paper">
+          <input type="text" class="form-control" id="paper" required>
+        </div>
+        <div class="invalid-tooltip">
+          Please enter the paper.
         </div>
       </div>
       <div class="row mb-5 d-flex justify-content-center">
-        <label for="exampleFormControlTextarea1" class="col-sm-2 col-form-label fs-5">Keterangan Tambahan</label>
+        <label for="comment" class="col-sm-2 col-form-label fs-5">Keterangan Tambahan</label>
         <div class="col-md-5">
-          <textarea class="form-control resize" id="comment" rows="3"></textarea>
+          <textarea class="form-control resize" id="comment" rows="3" required></textarea>
+        </div>
+        <div class="invalid-tooltip">
+          Please enter the Comment.
         </div>
       </div>
       <div class="col-md-9 d-flex justify-content-end btn-btn">
-        <button type="submit" class="btn btn-primary btn-submit">
+        <button type="submit" class="btn btn-primary btn-submit" onclick="formInput()">
           Submit
         </button>
       </div>
